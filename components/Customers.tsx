@@ -1,12 +1,12 @@
 import Image from "next/image";
 import React from "react";
-import Circle from "@/public/Circle Layer.svg";
-import Cube from "@/public/Cube.svg";
-import Bag from "@/public/Bag.svg";
-import Ungroup from "@/public/Object Ungroup.svg";
-import Rocket from "@/public/Rocket.svg";
-import Arrows from "@/public/User Arrows.svg";
-import Scenery from "@/public/Scenery.svg";
+import Circle from "@/public/Colorfilter-Linear-32px.svg";
+import Cube from "@/public/BoxTick-Linear-32px.svg";
+import Bag from "@/public/Briefcase-Linear-32px.svg";
+import Ungroup from "@/public/Notepad-Linear-32px.svg";
+import Rocket from "@/public/Android-Linear-32px.svg";
+import Arrows from "@/public/KyberNetwork-Linear-32px.svg";
+import Scenery from "@/public/PictureFrame-Linear-32px.svg";
 
 interface ValueProps {
   icon: string;

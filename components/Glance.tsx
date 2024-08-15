@@ -29,7 +29,7 @@ const Glance: React.FC = () => {
           Switzerland, Commonwealth Development Corporation (CDC), UK and the
           Government of Bangladesh
         </p>
-        <a href="#" className="text-pink-500 font-semibold hover:underline">
+        <a href="#" className="text-green-400 font-semibold hover:underline">
           Read More →
         </a>
       </div>

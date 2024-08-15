@@ -48,6 +48,8 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import Spinner from "./Spinner";
+const baseURL =
+  "http://localhost:3001" || "https://bank-server-7h17.onrender.com";
 
 export default function CreateMembers() {
   const [email, setEmail] = useState("");
@@ -63,9 +65,7 @@ export default function CreateMembers() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `https://9a14-197-251-205-122.ngrok-free.app/api/getMembers`
-        );
+        const response = await fetch(`${baseURL}/api/getMembers`);
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -83,16 +83,13 @@ export default function CreateMembers() {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(
-        "https://bank-server-7h17.onrender.com/admin/members",
-        {
-          email,
-          password,
-          mobileNumber,
-          balance,
-          accountNumber,
-        }
-      );
+      const response = await axios.post(`${baseURL}/users/signup`, {
+        email,
+        password,
+        mobileNumber,
+        balance,
+        accountNumber,
+      });
       const token = response.data.token;
       console.log(response.data);
       setLoading(false);
@@ -128,7 +125,7 @@ export default function CreateMembers() {
 
         try {
           const response = await axios.post(
-            "https://bank-server-7h17.onrender.com/admin/bulkmembers",
+            `${baseURL}/admin/bulkmembers`,
             validData
           );
           console.log("Backend Response:", response.data);

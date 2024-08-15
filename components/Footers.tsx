@@ -84,7 +84,7 @@ const Footers: React.FC = () => {
           data-aos="fade-left"
         >
           <div className="flex px-5 items-center space-x-4">
-            <span className="text-pink-500 font-bold inline-flex gap-x-2">
+            <span className="text-green-500 font-bold inline-flex gap-x-2">
               <Image src={call} alt="call" /> 16519
             </span>
             <div className="flex space-x-2">

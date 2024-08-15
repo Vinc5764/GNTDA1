@@ -33,6 +33,8 @@ import useTokenStore from "@/lib/store";
 import { SkeletonDemo } from "./Skeleton";
 import noDataImage from "@/public/last image.png"; // Update the path as needed
 import Image from "next/image";
+const baseURL =
+  "http://localhost:3001" || "https://bank-server-7h17.onrender.com";
 
 export default function CustomerReport() {
   const [transactions, setTransactions] = useState([]);
@@ -56,14 +58,11 @@ export default function CustomerReport() {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(
-          `http://localhost:3001/users/reports`,
-          {
-            params: {
-              accountNumber: datas.account.accountNumber,
-            },
-          }
-        );
+        const response = await axios.get(`${baseURL}/users/reports`, {
+          params: {
+            accountNumber: datas.account.accountNumber,
+          },
+        });
         if (!response) {
           throw new Error("Failed to fetch data");
         }
@@ -182,7 +181,9 @@ export default function CustomerReport() {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">Transaction Report</h1>
+        <h1 className="mt-6  text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
+          Transaction Report
+        </h1>
         <p className="text-muted-foreground">
           View and filter your recent transactions.
         </p>
@@ -359,7 +360,12 @@ export default function CustomerReport() {
         </div>
       </div>
       <div className="mt-8 flex justify-end">
-        <Button onClick={handleDownload}>Download Report</Button>
+        <Button
+          className=" bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white"
+          onClick={handleDownload}
+        >
+          Download Report
+        </Button>
       </div>
     </div>
   );

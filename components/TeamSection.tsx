@@ -67,7 +67,7 @@ const TeamSection: React.FC = () => {
           <h2 className="text-3xl font-bold mb-2" data-aos="fade-left">
             Meet The Professionals
           </h2>
-          <div className="w-16 h-1 bg-blue-500 mx-auto"></div>
+          <div className="w-16 h-1 bg-green-500 mx-auto"></div>
         </div>
         <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"

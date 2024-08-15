@@ -22,6 +22,8 @@ import { useEffect, useState } from "react";
 import useTokenStore from "@/lib/store";
 import axios from "axios";
 import Current from "./Current";
+const baseURL =
+  "http://localhost:3001" || "https://bank-server-7h17.onrender.com";
 
 export default function CustomerHome() {
   const [fetchData, setFetchedData] = useState<any>({});
@@ -32,14 +34,11 @@ export default function CustomerHome() {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(
-          `https://bank-payment-server.onrender.com/users/reports`,
-          {
-            params: {
-              accountNumber: datas?.account?.accountNumber,
-            },
-          }
-        );
+        const response = await axios.get(`${baseURL}/users/reports`, {
+          params: {
+            accountNumber: datas?.account?.accountNumber,
+          },
+        });
         setIsLoading(false);
         setFetchedData(response.data);
       } catch (error) {
@@ -116,7 +115,7 @@ export default function CustomerHome() {
               </CardHeader>
               <CardContent className="flex items-center justify-between">
                 <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-blue-300 to-blue-500">
-                  ₵ {fetchData?.totals?.checking?.toFixed(2) || 0.0}
+                  ₵ {fetchData?.totals?.savings?.toFixed(2) || 0.0}
                 </div>
                 {/* <Link href="/dashboard/deposits" prefetch={false}>
                   <Button
@@ -186,7 +185,7 @@ export default function CustomerHome() {
               </CardHeader>
               <CardContent className="flex items-center justify-between">
                 <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-blue-300 to-blue-500">
-                  ₵ {fetchData?.totals?.checking?.toFixed(2) || 0.0}
+                  ₵ {fetchData?.totals?.savings?.toFixed(2) || 0.0}
                 </div>
                 {/* <Link
                   href="/dashboard/deposits"

@@ -31,8 +31,11 @@ const Partners: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#FCE0EF]/80 h-[50vh] py-12">
-      <h2 className="text-2xl font-bold text-center mb-8" data-aos="fade-left">
+    <div className="bg-green-400 h-[50vh] py-12">
+      <h2
+        className="text-2xl font-bold text-white text-center mb-8"
+        data-aos="fade-left"
+      >
         BUSINESS PARTNERS
       </h2>
       <div className="container mx-auto">

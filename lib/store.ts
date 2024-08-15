@@ -50,6 +50,10 @@ const useTokenStore = create<TokenState>()(
       setToken: (token: string, userType: UserType, name: any, datas: any) =>
         set({ token, userType, name, datas }),
       clearToken: () => set({ token: null }),
+      setUserType: (userType: UserType) => {
+        // Ensure non-null values
+        set({ userType });
+      },
     }),
     {
       name: "token-storage", // name of the item in localStorage

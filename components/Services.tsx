@@ -22,7 +22,7 @@ const ServiceCard: React.FC<ServiceProps> = ({ image, title }) => (
     <h3 className="text-lg font-semibold mb-2">{title}</h3>
     <a
       href="#"
-      className="text-pink-500 font-semibold hover:underline flex items-center"
+      className="text-green-500 font-semibold hover:underline flex items-center"
     >
       Learn more
       <svg
